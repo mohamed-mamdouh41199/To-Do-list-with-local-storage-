@@ -1,0 +1,256 @@
+:root
+{    
+  --main-color: rgb(104, 187, 255);
+  --main-color-alt:  rgb(255, 112, 136);
+  --main-color-alt2: purple;
+  --background-color: #69696944;
+  --font-color: black;
+
+}
+
+*
+{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h4
+{
+  margin-left:4px ;
+}
+
+body
+{
+  font-family: 'Archivo', sans-serif;
+  background-color: var(--background-color)
+}
+
+.container
+{
+  padding-left: var(--mainpadding);
+  padding-right: var(--mainpadding);
+  margin-left: auto;
+  margin-right: auto;   
+}
+
+.all
+{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  align-content: center; 
+  background-color: white;
+  width: 50%;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  height: fit-content;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+  border-radius: 10px;
+}
+
+input
+{
+  margin-top: 40px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  /* width: 240px; */
+  /* flex: 1; */
+}
+
+input:focus 
+{
+  outline-color: var(--main-color);
+}
+
+.add 
+{
+  border: none;
+  background-color:var(--main-color);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+  width: 50px;
+}
+
+.tasks
+{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 15px;  
+}
+
+.task,
+.task-done
+{
+  border: solid 1px var(--main-color);
+  border-radius: 10px;
+  /* background-color: aqua; */
+  height: 70px;
+  width: 400px;
+  display: flex;
+  /* gap: -10px; */
+  flex-direction: column;
+  /* flex-wrap: wrap;   */
+  /* justify-content: center; */
+  /* align-content: center; */
+  position: relative;
+  padding: 10px;  
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+  transition: 0.4s;
+}
+
+.tasks .task span, 
+.tasks .task-done span
+{
+  font-weight: bold;
+  font-size: 15px;
+  background-color:var(--main-color);
+  color: white;
+  /* padding: 2px 6px; */
+  border-radius: 4px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  transform: translate(350px,-40px);  
+  text-align: center;
+}
+
+
+@media (max-width: 850px) 
+{
+  .task,
+  .task-done
+  {
+    width: 300px;
+  }
+
+  .all
+  {
+    width: 60%;
+  }
+
+  .tasks .task span, 
+.tasks .task-done span
+  {
+    transform: translate(250px,-30px);
+  }
+
+  input
+  {
+    width: 110px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 542px) 
+{
+
+  .all
+  {
+    width: 80%;
+  }
+}
+
+@media (max-width: 410px) 
+{
+  .task,
+  .task-done
+  {
+    width: 270px;
+    height: 60px;
+  }
+
+  .all
+  {
+    width: 90%;
+  }
+
+  .tasks .task span, 
+.tasks .task-done span
+  {
+    transform: translate(230px,-40px);
+  }
+
+  input
+  {
+    width: 100px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 342px) 
+{
+  .task,
+  .task-done
+  {
+    width: 240px;
+  }
+
+  .all
+  {
+    width: 90%;
+  }
+
+  .tasks .task span, 
+.tasks .task-done span
+  {
+    transform: translate(200px,-30px);
+  }
+
+  input
+  {
+    width: 80px;
+    margin: 0;
+  }
+}
+
+.task:hover
+{
+  transform: scale(1.08);
+  box-shadow: 0 3px -20px rgb(0 0 0 / 0.8);
+}
+
+.task p,
+.task-done p
+{  
+  margin: 6px;
+}
+.task::before
+{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    left: -2px;
+    top: 0px;
+    background-color: var(--main-color);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.task-done
+{
+  opacity: 0.4;
+}
+

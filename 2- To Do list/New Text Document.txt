@@ -1,0 +1,54 @@
+ tasksDiv.innerHTML = "";
+
+    
+    // create the els
+    tasks.forEach((task) => 
+    {
+        let div = document.createElement("div")
+        div.id = "id" + task.id 
+        div.className = "task"
+
+        if (task.completed === true) 
+        {
+            div.className = "task-done";
+        }   
+        
+        div.setAttribute("onclick" , "done(id)")
+
+        div.setAttribute("data-id", task.id);
+
+        console.log(task.id)
+
+        let h4 = document.createElement("h4")        
+
+        let p = document.createElement("p")
+
+
+        let span = document.createElement("span");
+        span.className = "del";
+        span.appendChild(document.createTextNode("X"));
+
+        
+        // Append Button To Main Div
+        
+        // Create texts
+        let taskTitle_text = document.createTextNode(task.title)
+
+        let taskStatus_text = document.createTextNode(task.completed)    
+
+        // appent text to ells
+        h4.appendChild(taskTitle_text)
+
+        p.appendChild(taskStatus_text)
+        
+        // append el to div 
+        div.appendChild(h4)
+
+        div.appendChild(p)
+        
+        div.appendChild(span);  
+
+        tasksDiv.appendChild(div)
+        // taskDiv.appendChild(removeBtn)
+        // taskDiv.appendChild(completeChk)
+    })
